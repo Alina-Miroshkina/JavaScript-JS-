@@ -1,0 +1,165 @@
+
+// МЕТОДЫ МАССИВОВ
+
+// Простые (не принимают коллбэк в качестве аргумента)
+
+const nums = [1, 2, 3, 4, 5];
+
+nums.push(6); // добавляет переданное значение в конец массива
+nums.pop(); // удаляет последний элемент массива
+nums.unshift(0); // добавляет переданное значение в начало массива
+nums.shift(); // удаляет первый элемент массива
+
+// console.log(nums);
+
+
+// ПРАКТИКА
+
+const array = [-10, 'hello', 78, null, 68, 'good morning!', 'hi', true, -56];
+
+// 1. Вывести в консоль тип данных всех элементов по порядку
+// number
+// string
+// number
+// object
+//...
+
+// for(let i = 0; i < array.length; i++){
+//   console.log(typeof array[i])
+// }
+
+
+// 2. Создать новый массив только с числами из массива array. Вывести массив в консоль
+// [-10, 78, 68, -56]
+
+const arrayNums = [];
+
+for(let i = 0; i < array.length; i++){
+  if(typeof array[i] === 'number'){
+    arrayNums.push(array[i])
+  }
+}
+
+// console.log(arrayNums);
+
+
+// 3. Создать новый массив только со строками короче 6 символов. Вывести массив в консоль
+// ['hello', 'hi']
+
+const arrayStr = [];
+
+for(let i = 0; i < array.length; i++){
+  if(typeof array[i] === 'string' && array[i].length < 6){
+    arrayStr.push(array[i])
+  }
+}
+
+// console.log(arrayStr);
+
+
+// 4. Создать новый массив, в котором числа из массива array будут заменены на 'number'. Вывести массив в консоль
+// ['number', 'hello', 'number', null, 'number', 'good morning!', 'hi', true, 'number']
+
+const arrayReplace = [];
+
+// for(let i = 0; i < array.length; i++) {
+//   if(typeof array[i] === 'number'){
+//     arrayReplace.push('number')
+//   } else {
+//     arrayReplace.push(array[i])
+//   }
+// }
+
+
+// for(let i = 0; i < array.length; i++) {
+//   typeof array[i] === 'number' ? arrayReplace.push('number') : arrayReplace.push(array[i])
+// }
+
+for(let i = 0; i < array.length; i++) {
+  arrayReplace.push(typeof array[i] === 'number' ? 'number' : array[i])
+}
+
+// console.log(arrayReplace);
+
+
+// 5. Создать новый массив, в который попаду все отрицательные числа из массива array в обратном порядке. Вывести массив в консоль
+// [-56, -10]
+
+const negativeNumsReversed = [];
+
+for(let i = 0; i < array.length; i++) {
+  if(array[i] < 0){
+    negativeNumsReversed.unshift(array[i])
+  }
+}
+
+// console.log(negativeNumsReversed);
+
+const names = ['Oleg', 'Irina', 'Anton', 'Boris', 'Olga', 'Igor', 'Pavel', 'olena'];
+
+// 6. Создать новый массив, куда попадут имена начинающиеся на букву O/o. Вывести массив в консоль
+
+const oNames = [];
+
+// for(let i = 0; i < names.length; i++) {
+//   if(names[i][0] === 'O' || names[i][0] === 'o'){
+//     oNames.push(names[i])
+//   }
+// }
+
+// for(let i = 0; i < names.length; i++) {
+//   if(names[i].startsWith('O') || names[i].startsWith('o')){
+//     oNames.push(names[i])
+//   }
+// }
+
+// for(let i = 0; i < names.length; i++) {
+//   if(names[i][0].toUpperCase() === 'O'){
+//     oNames.push(names[i])
+//   }
+// }
+
+for(let i = 0; i < names.length; i++) {
+  if(names[i].toUpperCase().startsWith('O')){
+    oNames.push(names[i])
+  }
+}
+
+
+// 7. Создать новый массив, куда попадут имена имеющие в своем составе букву I/i. Вывести массив в консоль
+// .includes()
+
+const iNames = [];
+
+for(let i = 0; i < names.length; i++) {
+  if(names[i].toLowerCase().includes('i')){
+    iNames.push(names[i])
+  }
+}
+
+// console.log(iNames);
+
+// 8. Создать новый массив, куда попадут имена длина которых от 2 до 4 символов (вкл). Вывести массив в консоль
+
+const shortNames = [];
+
+for(let i = 0; i < names.length; i++) {
+  if(names[i].length >= 2 && names[i].length <= 4){
+    shortNames.push(names[i])
+  }
+}
+
+// console.log(shortNames);
+
+
+// ДЗ
+
+// 1. Перевернуть массив: Дано: массив чисел. Необходимо перевернуть его порядок с помощью методов массива.
+// 2. Добавить элемент в начало массива: Дано: массив и элемент. Добавьте элемент в начало массива с помощью метода массива.
+// 3. Преобразовать все строки в верхний регистр: Дано: массив строк. Преобразуйте все строки в массиве в верхний регистр.
+// 4. Создать массив, содержащий длины строк: Дано: массив строк. Создайте новый массив, содержащий длины этих строк.
+// 5. Преобразовать первый символ всех строк в верхний регистр: Дано: массив строк. Преобразуйте первый символ каждой строки в верхний регистр.
+
+
+// *6. Объединить два массива: Дано: два массива. Объедините их в один массив.
+// *7. Создать массив, содержащий только уникальные элементы: Дано: массив. Создайте новый массив, содержащий только уникальные элементы из исходного массива.
