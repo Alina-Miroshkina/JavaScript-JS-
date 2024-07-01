@@ -1,0 +1,90 @@
+// split() - метод строки, превращает строку в массив
+// join() - метод, массива, превращает массив в строку
+// reverse() - метод массива, переворачивает массивы
+
+// slice() - метод строки и массива. Создает копию (полную или частичную)
+
+// indexOf() - находит индекс переданного элемента в массиве. если такого элемента нет в массиве, то возвращает -1
+
+
+// 1. Дана строка. Создать новую переменную и положить туда строку наоборот
+
+const greeting = 'hello, world!';
+
+const greeting_reverse = greeting.split('').reverse().join('');
+
+// console.log(greeting);
+// console.log(greeting_reverse);
+
+
+// 2. Дана строка. Создать новую переменную и положить туда строку с порядком слов наоборот
+// 'amet sit dolor ipsum Lorem'
+
+const lorem = 'Lorem ipsum dolor sit amet';
+
+const lorem_reverse = lorem.split(' ').reverse().join(' ');
+
+// 3. Дан массив. Создать его копию
+
+const numbers = [1, 2, 3, 4, 5];
+
+const numbers_copy1 = [...numbers];
+const numbers_copy2 = numbers.slice()
+
+// console.log(numbers);
+// console.log(numbers_copy1);
+// console.log(numbers_copy2);
+
+
+// 4. Дан массив из чисел. Создать копию массива без элемента с индексом 3
+const nums = [0, 1, 2, 3, 4, 5];
+
+const nums1 = nums.slice(0, 2);
+const nums2 = nums.slice(3);
+
+const nums_final = [...nums1, ...nums2];
+
+// console.log(nums_final);
+
+
+// 5. Дан массив со строками. Создать новый массив, в который попадут все строки из массива names с первой буквой в верхнем регистре
+// ['Olga', 'Ivan', 'Irina', 'Sergey']
+
+const names = ['olga', 'ivan', 'irina', 'sergey'];
+
+const names_up = [];
+
+for(let i = 0; i < names.length; i++){
+  names_up.push(names[i][0].toUpperCase() + names[i].slice(1))
+}
+
+// console.log(names_up);
+
+// 6. Дан массив со строками. Создать новый массив, в который попадут все строки из массива names с последней буквой в верхнем регистре
+// ['olgA', 'ivaN', 'irinA', 'sergeY']
+
+const names_up2 = []
+
+for(let i = 0; i < names.length; i++){
+  names_up2.push(names[i].slice(0, -1) + names[i].slice(-1).toUpperCase())
+}
+
+// for(let i = 0; i < names.length; i++){
+//   names_up2.push(names[i].slice(0, -1) + names[i][names[i].length - 1].toUpperCase())
+// }
+
+// console.log(names_up2);
+
+
+// 7. Дан массив со строками. Создать новый массив, в который попадут строки начинающиеся на i из массива names с первой буквой в верхнем регистре
+// ['Ivan', 'Irina']
+
+const names_up3 = [];
+
+for(let i = 0; i < names.length; i++){
+  if(names[i][0] === 'i'){
+    names_up3.push(names[i][0].toUpperCase() + names[i].slice(1))
+  }
+}
+
+// console.log(names_up3)
