@@ -1,0 +1,107 @@
+Related Code Snippets
+****
+Variable creation
+let school = "SheCodes";
+let fullPackage = "SheCodes Pro";
+let projects = 4;
+let awesome = true;
+-----
+More info
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+----
+let age = 23; // Number
+let name = "Julie"; // String
+let canCode = true; // Boolean, could also be false
+More info
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+---
+Variable operations
+****
+let x = 2;
+let y = 3;
+let z = x + y; // 5
+
+let city = "Lisbon";
+let country = "Portugal";
+let place = city + " " + country; //Lisbon Portugal
+----
+
+Alert
+***
+alert("Olá");
+
+let name = "Angela";
+alert(name);
+---
+Prompt
+****
+let firstName = prompt("What is your first name");
+let lastName = prompt("What is your last name");
+let fullName = firstName + " " + lastName;
+alert(fullName);
+----
+Comparison and Logical Operators
+****
+2 > 3 // false 
+2 < 3 // true 
+2 <= 2 // true
+3 >= 2 // true
+2 === 5 // false 
+2 !== 3 // true 
+1 + 2 === 4 // false
+---
+if statement
+*****
+let country = prompt("What country are you from?");
+
+if (country === "Portugal") {
+  alert("You are cool");
+}
+
+if (country !== "Portugal") {
+  alert("Too bad for you");
+}
+---
+if else statement
+****
+
+let age = prompt("How old are you?");
+
+if (age < 18) {
+  alert("You cannot apply");
+} else {
+  alert("You can apply");
+}
+---
+
+Nested if else statements
+****
+if (age < 18) {
+  alert("you can't apply");
+} else {
+  if (age > 120) {
+    alert("you can't apply");
+  } else {
+    alert("you can apply");
+  }
+}
+----
+Logical And
+*****
+if (continent === "Europe" && language === "Portuguese") {
+  alert("You are from Portugal 🇵🇹");
+} else {
+  alert("You are not from Portugal");
+---
+
+Logical Or
+***
+if (age < 18 || gender === "male") {
+  alert("You can't join SheCodes 👩‍💻");
+}
+----
+Console.log
+*****
+console.log(name);
+console.log("Let's code!");
+----
