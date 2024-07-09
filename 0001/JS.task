@@ -1,0 +1,66 @@
+// Задание 
+// Задан прямогльный треугольник
+// Вам даны занчения двук катетов в переменных a и b
+
+// let a = 10
+// let b = 15
+
+// Создайте переменную "c" которая будет хранить гипотенузу прямоугольного треугольника
+
+// let c = (a ** 2 + b ** 2) ** 0.5
+// console.log(c)
+
+// ------------------------------
+// Задача на массивы (1)
+
+// Необходимо посчитать количество элементов, значение которых является строковым
+// let data = [123, null,'false', true, 'string', 0, 'value']
+
+// решение 1 
+// let countElem = 0
+
+// for (let i = 0; i < data.length; i++){
+//     if (typeof data[i] === 'string'){
+//         countElem++
+//     }
+// }
+
+// console.log(countElem)
+
+// -------------------
+// решение 2
+
+// let newArray = []
+
+// for (let i = 0; i < data.length; i++){
+//     if (typeof data[i] === 'string'){
+//         newArray.push(data[i])
+//     }
+// }
+// console.log(newArray.length)
+
+// ----------------
+// решение 3
+
+// let count = data.filter(elem => typeof elem === 'string').length
+// console.log(count)
+
+// ------------------------------
+// Задача 2
+let numbers = [10,20,30,30,40,100]
+
+// Создайте переменную, которая будет содержать среднее значение массива numbers
+// -------------------
+// решение 1
+let avg = 0
+for (let i = 0; i < numbers.length; i++){
+    avg += numbers[i] / numbers.length
+}
+
+console.log(avg)
+
+
+// -------------------
+// решение 2
+// let avg = numbers.reduce((acum, elem) => acum + elem / numbers.length, 0)
+// console.log(avg)

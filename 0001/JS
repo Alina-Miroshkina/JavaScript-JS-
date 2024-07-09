@@ -1,0 +1,78 @@
+// Методы строк
+
+// ----------------------
+// indexOf (метод строки, метод массива)
+// Возвращает первый индекс найденной построки (слева-направо)
+
+// let string = 'Привет мой друг мой'
+
+// console.log(string.indexOf('мой'))       7  
+// console.log(string.indexOf('мой',8))     16
+
+// ----------------------
+// slice (метод строки, метод массиво)
+// Позволяет получить подстроку из строки указав диапазон индексов
+
+// let string = 'Привет мой друг'
+
+// console.log(string.slice(0,6))       Привет
+
+// Получите подстроку "мой"
+// console.log(string.slice(7,10))      мой   
+
+// console.log(string.slice(11,15))        друг 
+// console.log(string.slice(11))           друг
+// console.log(string.slice(-4))           друг
+
+// ---------------------------------
+let contacts = [
+    '84930859059 test@mail.net',
+    '85930859013 handle@gmail.ru',
+    '849308059 telek@yahoo.net',
+    '835659059 test@ebay.com',
+    '82087859059 grand@calendar.ru',
+    '8193065059 tigran@someemail.com',
+]
+
+let phones = []
+let emails = []
+ 
+// Решение 1
+// for (let elem of contacts){
+//     let findSpace = elem.indexOf(' ')
+//     let email = elem.slice(findSpace + 1)
+//     let phone = elem.slice(0, findSpace)
+//     emails.push(email)
+//     phones.push(phone)
+// }
+
+
+// Решение 2
+for (let elem of contacts){
+    let arrayData = elem.split(' ')
+    emails.push(arrayData[1])
+    phones.push(arrayData[0])
+}
+
+console.log(phones)
+console.log(emails)
+
+// Создайте два массива: emails и phones
+// Поместите в каждый массив только номер и почту соответственно
+// Выведите два массива в консоль
+
+
+
+// ------------------
+// split()
+// преобразовывает строку в массив. 
+// в качестве аргумента указывается строка-разделитель
+
+// let string = 'Привет мой друг'
+
+// console.log(string.split('р'))       [ 'П', 'ивет мой д', 'уг' ]
+// console.log(string.split(' '))       [ 'Привет', 'мой', 'друг' ]
+
+// let string = 'Раз!Два!Три!Четыре'
+
+// console.log(string.split('!'))       [ 'Раз', 'Два', 'Три', 'Четыре' ]
