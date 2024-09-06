@@ -2,13 +2,88 @@
 // ПРИ САБМИТЕ ФОРМЫ ФОРМИРУЕТСЯ ОБЪЕКТ И ВЫВОДИТСЯ В КОНСОЛЬ  
 {     FIRSTNAME: INPUT1.VALUE,     LASTNAME: INPUT2.VALUE,     AGE: INPUT3.VALUE }
 -----------------------------------------------------------------------------------------
-
+сделай все выравние CSS 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: auto;
+            padding-right: 40px;
+            text-align: center;
+            color: #333;
+            transition: background-color 0.3s ease-in-out;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+
+        }
+        form {
+            justify-content: center; 
+            background-color: #fff;
+            padding: 40px ;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 20px auto;
+            padding: 10px 18 px;
+
+        }
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+            display: block;
+            font-weight: bold;
+            color: #333;
+            transition: color 0.3s ease-in-out;
+            transition: font-size 0.3s ease-in-out;
+            transition: box-shadow 0.3s ease-in-out;
+
+
+
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            justify-content: center;
+
+
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+
+        }
+        button:hover {
+            background-color: #0056b3;
+            color: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease-in-out;
+            transition: font-size 0.3s ease-in-out;
+            transition: box-shadow 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out;
+
+        }
+    </style>
 </head>
 <body>
     <form id="myForm">
@@ -46,49 +121,7 @@
     </script>
 </body>
 </html>
------------------------------------------
-СSS
-body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        input[type="text"], input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
+
+
 
 
