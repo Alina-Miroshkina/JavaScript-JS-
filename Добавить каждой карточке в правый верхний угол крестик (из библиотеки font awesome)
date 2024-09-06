@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #333;
+            transition: background-color 0.3s ease-in-out;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 20px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+            transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .users_container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .user_card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            width: 300px;
+            text-align: left;
+            position: relative;
+        }
+
+        .user_card p {
+            margin: 5px 0;
+        }
+
+        .user_card .close-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .user_card .close-icon:hover {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required><br><br>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="users_container"></div>
+
+    <script>
+        const allUsers = [];
+        const usersContainer = document.querySelector('.users_container');
+
+        const renderUsers = arr => {
+            usersContainer.innerText = '';
+            arr.forEach(({ firstname, lastname, age }) => {
+                const cardElem = document.createElement('div');
+                cardElem.classList.add('user_card');
+
+                const nameElem = document.createElement('p');
+                const ageElem = document.createElement('p');
+                const closeIcon = document.createElement('i');
+
+                nameElem.innerText = `Name: ${firstname} ${lastname}`;
+                ageElem.innerText = `Age: ${age}`;
+                closeIcon.classList.add('fas', 'fa-times', 'close-icon');
+
+                closeIcon.addEventListener('click', () => {
+                    const index = arr.findIndex(user => user.firstname === firstname && user.lastname === lastname && user.age === age);
+                    if (index !== -1) {
+                        arr.splice(index, 1);
+                        renderUsers(arr);
+                    }
+                });
+
+                cardElem.append(nameElem, ageElem, closeIcon);
+                usersContainer.append(cardElem);
+            });
+        };
+
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Предотвращаем отправку формы по умолчанию
+
+            // Получаем значения из инпутов
+            const firstname = document.getElementById('firstname').value;
+            const lastname = document.getElementById('lastname').value;
+            const age = document.getElementById('age').value;
+
+            // Формируем объект
+            const user = {
+                firstname: firstname,
+                lastname: lastname,
+                age: age
+            };
+
+            // Добавляем объект в массив allUsers
+            allUsers.push(user);
+
+            // Вызываем функцию renderUsers с обновленным массивом allUsers
+            renderUsers(allUsers);
+
+            // Очищаем форму
+            event.target.reset();
+        });
+    </script>
+</body>
+</html>
