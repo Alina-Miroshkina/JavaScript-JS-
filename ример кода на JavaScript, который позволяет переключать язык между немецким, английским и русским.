@@ -1,0 +1,47 @@
+Вот пример кода на JavaScript, который позволяет переключать язык между немецким, английским и русским. В этом примере мы будем использовать простой HTML для отображения текста и кнопок для переключения языка.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Конечно! Вот пример кода на JavaScript, который позволяет переключать язык между немецким, английским и русским. В этом примере мы будем использовать простой HTML для отображения текста и кнопок для переключения языка.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Switcher</title>
+</head>
+<body>
+    <h1 id="greeting">Hello, World!</h1>
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('de')">Deutsch</button>
+    <button onclick="changeLanguage('ru')">Русский</button>
+
+    <script>
+        const translations = {
+            en: {
+                greeting: "Hello, World!"
+            },
+            de: {
+                greeting: "Hallo, Welt!"
+            },
+            ru: {
+                greeting: "Привет, мир!"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const greetingElement = document.getElementById('greeting');
+            greetingElement.textContent = translations[lang].greeting;
+        }
+    </script>
+</body>
+</html>
+```
+
+В этом примере:
+
+1. Мы создаем HTML-структуру с заголовком `<h1>` и тремя кнопками для переключения языка.
+2. В JavaScript мы создаем объект `translations`, который содержит переводы для каждого языка.
+3. Функция `changeLanguage` принимает язык в качестве аргумента и обновляет текст заголовка в зависимости от выбранного языка.
+
+Когда пользователь нажимает на одну из кнопок, вызывается функция `changeLanguage` с соответствующим языком, и текст заголовка обновляется.
