@@ -1,0 +1,113 @@
+ // Переключение языка
+    const translations = {
+        en: {
+            headerTitle: "Massage at Your Door",
+            headerSubtitle: "Professional massage services at your home at a convenient time for you.",
+            servicesTitle: "Our Services",
+            service1Title: "Swedish Massage",
+            service1Description: "Helps reduce stress, relax and improve blood circulation.",
+            service2Title: "Deep Tissue Massage",
+            service2Description: "Relieves muscle tension and improves flexibility.",
+            service3Title: "Pregnancy Massage",
+            service3Description: "Relieves discomfort during pregnancy.",
+            aboutTitle: "About Us",
+            aboutDescription: "Our team of professional massage therapists with years of experience offers high-quality massage services at home. We strive to ensure that every client feels comfortable and relaxed.",
+            testimonialsTitle: "Customer Reviews",
+            testimonial1Text: "Great massage! I recommend it to everyone who is looking for a professional with attention to detail.",
+            testimonial1Author: "- Ekaterina, Moscow",
+            testimonial2Text: "The massage helped me relieve back pain after a long day at the computer. Thank you!",
+            testimonial2Author: "- Ivan, St. Petersburg",
+            testimonial3Text: "Professional approach and individual attention to each client.",
+            testimonial3Author: "- Olga, Kazan",
+            pricingTitle: "Our Prices",
+            pricing1Title: "60 minutes",
+            pricing1Price: "₽3500",
+            pricing2Title: "90 minutes",
+            pricing2Price: "₽5000",
+            pricing3Title: "120 minutes",
+            pricing3Price: "₽6500",
+            bookingTitle: "Book a Massage",
+            contactTitle: "Contacts",
+            contactEmail: "Email: massage@yourdoor.com",
+            contactPhone: "Phone: +7 (999) 123-45-67",
+            contactAddress: "Address: Moscow, Example Street, 10"
+        },
+        de: {
+            headerTitle: "Massage an Ihrer Tür",
+            headerSubtitle: "Professionelle Massagedienste zu Hause zu einer für Sie günstigen Zeit.",
+            servicesTitle: "Unsere Dienstleistungen",
+            service1Title: "Schwedische Massage",
+            service1Description: "Hilft Stress abzubauen, sich zu entspannen und die Blutzirkulation zu verbessern.",
+            service2Title: "Tiefengewebsmassage",
+            service2Description: "Lindert Muskelspannungen und verbessert die Flexibilität.",
+            service3Title: "Schwangerschaftsmassage",
+            service3Description: "Lindert Unbehagen während der Schwangerschaft.",
+            aboutTitle: "Über uns",
+            aboutDescription: "Unser Team aus professionellen Massagetherapeuten mit jahrelanger Erfahrung bietet hochwertige Massagedienste zu Hause an. Wir bemühen uns, dass sich jeder Kunde wohl und entspannt fühlt.",
+            testimonialsTitle: "Kundenbewertungen",
+            testimonial1Text: "Großartige Massage! Ich empfehle es jedem, der einen Profi mit Detailgenauigkeit sucht.",
+            testimonial1Author: "- Ekaterina, Moskau",
+            testimonial2Text: "Die Massage half mir, Rückenschmerzen nach einem langen Tag am Computer zu lindern. Vielen Dank!",
+            testimonial2Author: "- Ivan, St. Petersburg",
+            testimonial3Text: "Professioneller Ansatz und individuelle Aufmerksamkeit für jeden Kunden.",
+            testimonial3Author: "- Olga, Kasan",
+            pricingTitle: "Unsere Preise",
+            pricing1Title: "60 Minuten",
+            pricing1Price: "₽3500",
+            pricing2Title: "90 Minuten",
+            pricing2Price: "₽5000",
+            pricing3Title: "120 Minuten",
+            pricing3Price: "₽6500",
+            bookingTitle: "Einen Massagetermin buchen",
+            contactTitle: "Kontakte",
+            contactEmail: "E-Mail: massage@yourdoor.com",
+            contactPhone: "Telefon: +7 (999) 123-45-67",
+            contactAddress: "Adresse: Moskau, Beispielstraße, 10"
+        },
+        ru: {
+            headerTitle: "Массаж у Вас дома",
+            headerSubtitle: "Профессиональные услуги массажа на дому в удобное для вас время.",
+            servicesTitle: "Наши услуги",
+            service1Title: "Шведский массаж",
+            service1Description: "Помогает уменьшить стресс, расслабиться и улучшить кровообращение.",
+            service2Title: "Глубокий массаж",
+            service2Description: "Снимает мышечное напряжение и улучшает гибкость.",
+            service3Title: "Массаж для беременных",
+            service3Description: "Облегчает дискомфорт в период беременности.",
+            aboutTitle: "О нас",
+            aboutDescription: "Наша команда профессиональных массажистов с многолетним опытом предлагает высококачественные услуги массажа на дому. Мы стремимся к тому, чтобы каждый клиент чувствовал себя комфортно и расслабленно.",
+            testimonialsTitle: "Отзывы наших клиентов",
+            testimonial1Text: "Отличный массаж! Рекомендую всем, кто ищет профессионала с вниманием к деталям.",
+            testimonial1Author: "- Екатерина, Москва",
+            testimonial2Text: "Массаж помог мне снять боль в спине после долгой работы за компьютером. Спасибо!",
+            testimonial2Author: "- Иван, Санкт-Петербург",
+            testimonial3Text: "Профессиональный подход и индивидуальное внимание к каждому клиенту.",
+            testimonial3Author: "- Ольга, Казань",
+            pricingTitle: "Наши цены",
+            pricing1Title: "60 минут",
+            pricing1Price: "₽3500",
+            pricing2Title: "90 минут",
+            pricing2Price: "₽5000",
+            pricing3Title: "120 минут",
+            pricing3Price: "₽6500",
+            bookingTitle: "Записаться на массаж",
+            contactTitle: "Контакты",
+            contactEmail: "Email: massage@yourdoor.com",
+            contactPhone: "Телефон: +7 (999) 123-45-67",
+            contactAddress: "Адрес: Москва, ул. Примерная, д. 10"
+        }
+    };
+
+    function changeLanguage(lang) {
+        document.getElementById('header-title').textContent = translations[lang].headerTitle;
+        document.getElementById('header-subtitle').textContent = translations[lang].headerSubtitle;
+        document.getElementById('services-title').textContent = translations[lang].servicesTitle;
+        document.getElementById('service1-title').textContent = translations[lang].service1Title;
+        document.getElementById('service1-description').textContent = translations[lang].service1Description;
+        document.getElementById('service2-title').textContent = translations[lang].service2Title;
+        document.getElementById('service2-description').textContent = translations[lang].service2Description;
+        document.getElementById('service3-title').textContent = translations[lang].service3Title;
+        document.getElementById('service3-description').textContent = translations[lang].service3Description;
+        document.getElementById('about-title').textContent = translations[lang].aboutTitle;
+        document.getElementById('about-description').textContent = translations[lang].aboutDescription;
+        docum
