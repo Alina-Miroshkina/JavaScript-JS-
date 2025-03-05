@@ -1,0 +1,168 @@
+Описание задания.
+
+ 1 уровень сложности: 1. Создайте класс Car с свойствами mark (марка), model (модель) и year (год выпуска). Добавьте метод age(), который вычисляет возраст автомобиля (на основе текущего года).
+Решение:
+
+1. Класс Car
+Copy
+class Car {
+  constructor(mark, model, year) {
+    this.mark = mark;
+    this.model = model;
+    this.year = year;
+  }
+
+  age() {
+    const currentYear = new Date().getFullYear();
+    return currentYear - this.year;
+  }
+}
+
+// Пример использования:
+const myCar = new Car('Toyota', 'Corolla', 2015);
+console.log(myCar.age()); // Выведет возраст автомобиля
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Модифицируйте класс Person, добавив новое свойство email и метод change_email(newEmail), который меняет email только если новый email содержит символ "@" и ".", иначе выбрасывает исключение.
+Решение : 
+
+ Класс Person
+Copy
+class Person {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+
+  change_email(newEmail) {
+    if (newEmail.includes('@') && newEmail.includes('.')) {
+      this.email = newEmail;
+    } else {
+      throw new Error('Некорректный адрес электронной почты');
+    }
+  }
+}
+
+// Пример использования:
+const person = new Person('John Doe', 'john.doe@example.com');
+try {
+  person.change_email('new.email@example.com');
+} catch (error) {
+  console.error(error.message);
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Создайте класс Library, который хранит статический массив книг. Каждая книга – это объект с свойствами title и author. Добавьте статический метод addBook(book), который добавляет книгу в библиотеку, и статический метод listBooks(), который выводит список книг в консоль.
+Решение: 
+Класс Library
+Copy
+class Library {
+  static books = [];
+
+  static addBook(book) {
+    this.books.push(book);
+  }
+
+  static listBooks() {
+    console.log(this.books);
+  }
+}
+
+// Пример использования:
+Library.addBook({ title: '1984', author: 'George Orwell' });
+Library.listBooks();
+-----------------------------------------------------------------------
+
+Создайте класс Rectangle с приватными свойствами #width и #height. Реализуйте геттеры и сеттеры для этих свойств, чтобы ширина и высота могли устанавливаться только положительными числами. Добавьте метод area(), который возвращает площадь прямоугольника.
+
+Решение: 
+Класс Rectangle
+Copy
+class Rectangle {
+  #width;
+  #height;
+
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  get width() {
+    return this.#width;
+  }
+
+  set width(value) {
+    if (value > 0) {
+      this.#width = value;
+    } else {
+      throw new Error('Ширина должна быть положительным числом');
+    }
+  }
+
+  get height() {
+    return this.#height;
+  }
+
+  set height(value) {
+    if (value > 0) {
+      this.#height = value;
+    } else {
+      throw new Error('Высота должна быть положительным числом');
+    }
+  }
+
+  area() {
+    return this.#width * this.#height;
+  }
+}
+
+// Пример использования:
+const rect = new Rectangle(5, 10);
+console.log(rect.area()); // Выведет площадь прямоугольника
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Создайте класс BankAccount с приватным свойством #balance. Реализуйте методы для депозита и снятия средств. Добавьте геттер для получения текущего баланса. При попытке снять сумму, большую чем баланс, выбрасывайте исключение. Затем создайте статический метод, который ведёт учёт всех созданных счетов (например, массив accounts) и статический метод для расчёта общего баланса всех счетов.
+Решение : 
+Класс BankAccount
+Copy
+class BankAccount {
+  static accounts = [];
+
+  #balance;
+
+  constructor(initialBalance = 0) {
+    this.#balance = initialBalance;
+    BankAccount.accounts.push(this);
+  }
+
+  deposit(amount) {
+    if (amount > 0) {
+      this.#balance += amount;
+    } else {
+      throw new Error('Сумма депозита должна быть положительной');
+    }
+  }
+
+  withdraw(amount) {
+    if (amount > this.#balance) {
+      throw new Error('Недостаточно средств');
+    } else if (amount <= 0) {
+      throw new Error('Сумма снятия должна быть положительной');
+    } else {
+      this.#balance -= amount;
+    }
+  }
+
+  getBalance() {
+    return this.#balance;
+  }
+
+  static totalBalance() {
+    return this.accounts.reduce((total, account) => total + account.getBalance(), 0);
+  }
+}
+
+// Пример использования:
+const account1 = new BankAccount(100);
+const account2 = new BankAccount(200);
+account1.deposit(50);
+account2.withdraw(30);
+console.log(BankAccount.totalBalance()); // Выведет общий баланс всех счетов
+-------------------------------------------------------------------------------
